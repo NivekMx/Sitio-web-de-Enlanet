@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enlanet - Internet de fibra óptica para tu hogar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #FEF8E9;
+      scroll-behavior: smooth;
+    }
+
+    /* Efectos sutiles para los botones principales, sin modificar el diseño */
+    .btn-interactive {
+      transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease;
+      will-change: transform;
+    }
+
+    .btn-interactive:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 10px 20px rgba(9, 61, 101, 0.22);
+      filter: brightness(1.04);
+    }
+
+    .btn-interactive:active {
+      transform: translateY(-1px) scale(0.98);
+      box-shadow: 0 4px 10px rgba(9, 61, 101, 0.18);
+    }
+
+    .btn-interactive:focus-visible {
+      outline: 3px solid #95D2D2;
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn-interactive {
+        transition: none;
+      }
+
+      .btn-interactive:hover,
+      .btn-interactive:active {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body class="text-slate-800 flex flex-col min-h-screen relative">
+
+  <!-- NAVBAR -->
+  <nav class="bg-[#FEF8E9] border-b border-[#95D2D2]/30 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- LOGO -->
+      <a href="index.html" class="flex items-center space-x-2">
+        <svg class="h-10 w-auto" viewBox="0 0 280 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logoGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1DA8C1" />
+              <stop offset="100%" stop-color="#093D65" />
+            </linearGradient>
+          </defs>
+          <path d="M 12 52 L 28 32 L 36 40 L 20 60 Z" fill="url(#logoGradNav)" />
+          <path d="M 28 20 L 44 40 L 36 48 L 20 28 Z" fill="#1DA8C1" />
+          <text x="52" y="58" font-family="'Poppins', sans-serif" font-size="44" font-weight="700" fill="#1DA8C1" letter-spacing="-1">enlanet</text>
+          <text x="185" y="24" font-family="'Poppins', sans-serif" font-size="16" font-weight="600" fill="#1DA8C1">Internet</text>
+        </svg>
+      </a>
+
+      <!-- ENLACES DEL MENÚ -->
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-[#093D65]">
+        <a href="index.html" class="hover:text-[#1DA8C1] transition">Inicio</a>
+        <a href="planes.html" class="hover:text-[#1DA8C1] transition">Planes</a>
+        <a href="cobertura.html" class="hover:text-[#1DA8C1] transition">Cobertura</a>
+        <a href="solicitar.html" class="hover:text-[#1DA8C1] transition">Solicitar instalación</a>
+        <a href="soporte.html" class="hover:text-[#1DA8C1] transition">Soporte</a>
+      </div>
+
+      <!-- BOTÓN INICIAR SESIÓN -->
+      <div>
+        <a href="index.html#login" class="btn-interactive bg-[#1DA8C1] hover:bg-[#62C6D5] text-white px-5 py-2.5 rounded-lg text-sm font-medium transition shadow-sm">
+          Iniciar sesión
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header id="inicio" class="relative bg-[#093D65] text-white py-24 px-4 overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1544717297-fa95b6ee9643?auto=format&fit=crop&w=1600&q=80');"></div>
+    <div class="relative z-10 max-w-4xl mx-auto text-center space-y-4">
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight">Internet de fibra óptica para tu hogar</h1>
+      <p class="text-lg md:text-xl text-[#95D2D2] font-light">Instalación rápida y soporte cercano</p>
+    </div>
+  </header>
+
+  <!-- SECCIÓN SPLIT -->
+  <section class="grid grid-cols-1 md:grid-cols-2">
+    <div class="relative bg-cover bg-center text-white py-16 px-8 md:px-12 flex flex-col justify-between min-h-[440px]" style="background-image: linear-gradient(to right, rgba(9, 61, 101, 0.8), rgba(9, 61, 101, 0.7)), url('https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1000&q=80');">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Así de fácil es tener Enlanet</h2>
+        <div class="max-w-md mx-auto space-y-4 mb-8">
+          <div class="flex items-center space-x-3 bg-white/10 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/20">
+            <span class="w-7 h-7 bg-[#1DA8C1] rounded-full flex items-center justify-center font-bold text-xs">1</span>
+            <span class="text-sm md:text-base font-medium">Agenda tu visita</span>
+          </div>
+          <div class="flex items-center space-x-3 bg-white/10 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/20">
+            <span class="w-7 h-7 bg-[#1DA8C1] rounded-full flex items-center justify-center font-bold text-xs">2</span>
+            <span class="text-sm md:text-base font-medium">Conectamos tu hogar</span>
+          </div>
+          <div class="flex items-center space-x-3 bg-white/10 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/20">
+            <span class="w-7 h-7 bg-[#1DA8C1] rounded-full flex items-center justify-center font-bold text-xs">3</span>
+            <span class="text-sm md:text-base font-medium">Empieza a navegar</span>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="cobertura.html" class="btn-interactive inline-block border-2 border-white bg-[#093D65]/80 hover:bg-[#093D65] text-white px-8 py-3 rounded-md font-semibold text-sm transition shadow-md">
+          Zonas de cobertura
+        </a>
+      </div>
+    </div>
+
+    <div class="relative bg-cover bg-center text-white py-16 px-8 md:px-12 flex flex-col justify-between min-h-[440px]" style="background-image: linear-gradient(to right, rgba(29, 168, 193, 0.88), rgba(29, 168, 193, 0.88)), url('https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=1000&q=80');">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Conéctate mejor</h2>
+        <div class="max-w-md mx-auto space-y-4 mb-8">
+          <div class="flex items-center space-x-4"><span class="text-[#093D65] font-bold">✓</span><span class="text-base md:text-lg font-medium">Conecta más equipos</span></div>
+          <div class="flex items-center space-x-4"><span class="text-[#093D65] font-bold">✓</span><span class="text-base md:text-lg font-medium">Planes a tu medida</span></div>
+          <div class="flex items-center space-x-4"><span class="text-[#093D65] font-bold">✓</span><span class="text-base md:text-lg font-medium">Conexión estable</span></div>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="planes.html" class="btn-interactive inline-block border-2 border-white bg-[#093D65] hover:bg-[#093D65]/90 text-white px-8 py-3 rounded-md font-semibold text-sm transition shadow-md">
+          Ver planes
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARJETAS ACCIÓN RÁPIDA -->
+  <section id="agenda">
+    <div class="relative bg-cover bg-center py-16 px-4 text-white text-center" style="background-image: linear-gradient(to right, rgba(9, 61, 101, 0.92), rgba(9, 61, 101, 0.88)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80');">
+      <div class="max-w-xl mx-auto space-y-4">
+        <span class="inline-block bg-[#1DA8C1]/30 text-[#95D2D2] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Nuevo Cliente</span>
+        <h2 class="text-3xl font-bold">Instala tu internet</h2>
+        <p class="text-sm text-slate-200">Elige día y horario para tu instalación</p>
+        <div class="pt-2">
+          <a href="solicitar.html" class="btn-interactive inline-flex items-center space-x-2 bg-[#1DA8C1] hover:bg-[#62C6D5] text-white px-6 py-3 rounded-md font-semibold text-sm transition shadow">
+            <span>Solicitar instalación</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="soporte" class="relative bg-cover bg-center py-16 px-4 text-white text-center" style="background-image: linear-gradient(to right, rgba(29, 168, 193, 0.9), rgba(29, 168, 193, 0.85)), url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80');">
+      <div class="max-w-xl mx-auto space-y-4">
+        <span class="inline-block bg-[#093D65]/40 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Cliente Existente</span>
+        <h2 class="text-3xl font-bold">Reporta un problema</h2>
+        <p class="text-sm text-slate-100">Si tienes fallas, lentitud o dudas de facturación</p>
+        <div class="pt-2">
+          <a href="#reportar" class="btn-interactive inline-flex items-center space-x-2 bg-[#093D65] hover:bg-[#093D65]/90 text-white px-6 py-3 rounded-md font-semibold text-sm transition shadow">
+            <span>Abrir soporte</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#093D65] text-white pt-16 pb-8 border-t border-[#1DA8C1]/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-white/10">
+        <div class="space-y-4">
+          <svg class="h-10 w-auto" viewBox="0 0 280 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 12 52 L 28 32 L 36 40 L 20 60 Z" fill="#FFFFFF" />
+            <path d="M 28 20 L 44 40 L 36 48 L 20 28 Z" fill="#FFFFFF" />
+            <text x="52" y="58" font-family="'Poppins', sans-serif" font-size="44" font-weight="700" fill="#FFFFFF" letter-spacing="-1">enlanet</text>
+            <text x="185" y="24" font-family="'Poppins', sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Internet</text>
+          </svg>
+          <p class="text-xs text-slate-300">Internet de fibra óptica para tu hogar</p>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white mb-4">Servicio</h4>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li><a href="planes.html" class="hover:text-[#95D2D2]">Planes</a></li>
+            <li><a href="cobertura.html" class="hover:text-[#95D2D2]">Cobertura</a></li>
+            <li><a href="solicitar.html" class="hover:text-[#95D2D2]">Agenda tu instalación</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white mb-4">Soporte</h4>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li><a href="#soporte" class="hover:text-[#95D2D2]">Realiza un reporte</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white mb-4">Contacto</h4>
+          <ul class="space-y-2 text-xs text-slate-300">
+            <li>Teléfono: 800-000-0000</li>
+            <li>Correo: contacto@enlanet.mx</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 text-center text-xs text-slate-400">
+        <p>© 2026 Enlaces Seguros y Eficientes de México S.A.S. de C.V.</p>
+      </div>
+    </div>
+  </footer>
+
+<!-- VENTANA EMERGENTE DEL CHAT DEL BOT -->
+  <div id="chat-ventana" class="fixed bottom-24 right-6 z-50 w-80 md:w-96 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden hidden flex flex-col font-['Poppins',sans-serif]">
+    <!-- Encabezado del Chat -->
+    <div class="bg-[#093D65] text-white p-4 flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <div class="relative">
+          <div class="w-10 h-10 bg-[#1DA8C1] rounded-full flex items-center justify-center text-white">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a4 4 0 0 1 4 4v3h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1v-3a4 4 0 0 1 4-4h1V5.73C10.4 5.39 10 4.74 10 4a2 2 0 0 1 2-2M9 11a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1m6 0a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1m-3 4a3 3 0 0 0-3 3h6a3 3 0 0 0-3-3Z"/></svg>
+          </div>
+          <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-[#093D65] rounded-full"></span>
+        </div>
+        <div>
+          <h3 class="font-bold text-sm">En línea</h3>
+          <p class="text-[10px] text-[#95D2D2]">Disponible ahora</p>
+        </div>
+      </div>
+      <button onclick="toggleChat()" class="text-white hover:text-slate-300 text-xl font-bold p-1">×</button>
+    </div>
+
+    <!-- Cuerpo del Chat con opciones -->
+    <div class="p-4 bg-slate-50 flex-grow h-72 overflow-y-auto space-y-4">
+      <div class="bg-[#1DA8C1] text-white p-3.5 rounded-2xl rounded-tl-none text-xs leading-relaxed shadow-sm">
+        ¡Hola! 👋 ¡Te damos la bienvenida a <strong>Enlanet</strong>! Para brindarte la atención que te mereces, elige la opción que deseas:
+      </div>
+      <div class="flex flex-wrap gap-2 pt-2">
+        <button onclick="alert('Opción seleccionada: Contratar servicio de fibra óptica')" class="bg-white text-[#093D65] border border-[#1DA8C1] hover:bg-[#1DA8C1] hover:text-white text-xs py-1.5 px-3 rounded-full transition shadow-sm font-medium">Contratar servicio de fibra óptica</button>
+        <button onclick="alert('Opción seleccionada: Soporte técnico')" class="bg-white text-[#093D65] border border-[#1DA8C1] hover:bg-[#1DA8C1] hover:text-white text-xs py-1.5 px-3 rounded-full transition shadow-sm font-medium">Soporte técnico</button>
+        <button onclick="alert('Opción seleccionada: Pagos')" class="bg-white text-[#093D65] border border-[#1DA8C1] hover:bg-[#1DA8C1] hover:text-white text-xs py-1.5 px-3 rounded-full transition shadow-sm font-medium">Pagos</button>
+        <button onclick="alert('Opción seleccionada: Paquetes disponibles')" class="bg-white text-[#093D65] border border-[#1DA8C1] hover:bg-[#1DA8C1] hover:text-white text-xs py-1.5 px-3 rounded-full transition shadow-sm font-medium">Paquetes disponibles</button>
+        <button onclick="alert('Opción seleccionada: Zona de cobertura')" class="bg-white text-[#093D65] border border-[#1DA8C1] hover:bg-[#1DA8C1] hover:text-white text-xs py-1.5 px-3 rounded-full transition shadow-sm font-medium">Zona de cobertura</button>
+      </div>
+    </div>
+
+    <!-- Pie del Chat (Entrada simulada) -->
+    <div class="p-3 bg-white border-t border-slate-200">
+      <div class="flex items-center bg-slate-100 rounded-xl px-3 py-2 border border-slate-200">
+        <input type="text" placeholder="Escribe un mensaje..." class="bg-transparent text-xs w-full focus:outline-none text-slate-700" disabled>
+        <span class="text-slate-400 text-sm ml-2">📎</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTÓN FLOTANTE INFERIOR DERECHO (CON CONTORNO AZUL MARINO FORZADO) -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <!-- Cuadro de texto desplegable -->
+    <div class="relative mb-2 pr-6 cursor-pointer group" onclick="toggleChat()">
+      <div class="bg-white text-slate-800 text-xs py-2.5 px-4 rounded-2xl shadow-md border border-slate-200 flex items-center group-hover:border-[#1DA8C1] transition">
+        <span>Hola, ¿en qué te ayudo?</span>
+      </div>
+      <button class="absolute -top-1 right-1 text-slate-400 hover:text-slate-700 font-bold text-sm" onclick="event.stopPropagation(); this.closest('.fixed').style.display='none'">×</button>
+    </div>
+
+    <!-- Botón circular del bot con contorno azul marino marcado -->
+    <div class="relative">
+      <button onclick="toggleChat()" style="border: 2px solid #093D65 !important;" class="w-16 h-16 bg-[#FEF8E9] rounded-full shadow-xl flex items-center justify-center hover:scale-105 transition cursor-pointer">
+        <svg class="w-8 h-8 text-[#093D65]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a4 4 0 0 1 4 4v3h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1v-3a4 4 0 0 1 4-4h1V5.73C10.4 5.39 10 4.74 10 4a2 2 0 0 1 2-2M9 11a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1m6 0a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1m-3 4a3 3 0 0 0-3 3h6a3 3 0 0 0-3-3Z"/></svg>
+      </button>
+      <span class="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-sm pointer-events-none">1</span>
+    </div>
+  </div>
+
+  <!-- SCRIPT PARA ABRIR Y CERRAR LA VENTANA DEL CHAT -->
+  <script>
+    function toggleChat() {
+      const ventana = document.getElementById('chat-ventana');
+      if (ventana) {
+        ventana.classList.toggle('hidden');
+      }
+    }
+  </script>
+
+</body>
+</html>

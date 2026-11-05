@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitar Instalación - Enlanet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #FEF8E9;
+    }
+
+    /* ANIMACIONES GENERALES DE BOTONES Y ENLACES */
+    button,
+    nav a,
+    .fixed a {
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    /* EFECTO HOVER */
+    button:hover:not(:disabled),
+    nav a:hover,
+    .fixed a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(9, 61, 101, 0.20);
+    }
+
+    /* EFECTO AL PRESIONAR */
+    button:active:not(:disabled),
+    nav a:active,
+    .fixed a:active {
+      transform: translateY(0) scale(0.97);
+      box-shadow: 0 2px 6px rgba(9, 61, 101, 0.15);
+    }
+
+    /* EFECTO DE ENFOQUE */
+    button:focus-visible,
+    a:focus-visible {
+      outline: 2px solid #1DA8C1;
+      outline-offset: 3px;
+    }
+
+    /* ANIMACIÓN DEL BOTÓN FLOTANTE DEL CHAT */
+    .chat-float-button {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .chat-float-button:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 12px 25px rgba(9, 61, 101, 0.25);
+    }
+
+    /* ANIMACIÓN DE LAS OPCIONES DEL CHAT */
+    #chat-ventana button {
+      transition: all 0.25s ease;
+    }
+
+    /* RESPETAR LA PREFERENCIA DE MOVIMIENTO REDUCIDO */
+    @media (prefers-reduced-motion: reduce) {
+      button,
+      a {
+        transition: none !important;
+      }
+
+      button:hover,
+      a:hover,
+      button:active,
+      a:active {
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="text-slate-800 flex flex-col min-h-screen relative">
+
+  <!-- NAVBAR -->
+  <nav class="bg-[#FEF8E9] border-b border-[#95D2D2]/30 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+      <!-- LOGO -->
+      <a href="index.html" class="flex items-center space-x-2">
+        <svg class="h-10 w-auto" viewBox="0 0 280 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logoGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1DA8C1" />
+              <stop offset="100%" stop-color="#093D65" />
+            </linearGradient>
+          </defs>
+          <path d="M 12 52 L 28 32 L 36 40 L 20 60 Z" fill="url(#logoGradNav)" />
+          <path d="M 28 20 L 44 40 L 36 48 L 20 28 Z" fill="#1DA8C1" />
+          <text x="52" y="58" font-family="'Poppins', sans-serif" font-size="44" font-weight="700" fill="#1DA8C1" letter-spacing="-1">enlanet</text>
+          <text x="185" y="24" font-family="'Poppins', sans-serif" font-size="16" font-weight="600" fill="#1DA8C1">Internet</text>
+        </svg>
+      </a>
+
+      <!-- ENLACES DEL MENÚ -->
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-[#093D65]">
+        <a href="index.html" class="hover:text-[#1DA8C1] transition">Inicio</a>
+        <a href="planes.html" class="hover:text-[#1DA8C1] transition">Planes</a>
+        <a href="cobertura.html" class="hover:text-[#1DA8C1] transition">Cobertura</a>
+        <a href="solicitar.html" class="hover:text-[#1DA8C1] transition">Solicitar instalación</a>
+        <a href="soporte.html" class="hover:text-[#1DA8C1] transition">Soporte</a>
+      </div>
+
+      <!-- BOTÓN INICIAR SESIÓN -->
+      <div>
+        <a href="index.html#login" class="bg-[#1DA8C1] hover:bg-[#62C6D5] text-white px-5 py-2.5 rounded-lg text-sm font-medium transition shadow-sm">
+          Iniciar sesión
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-[#093D65] text-white py-12 px-4 text-center">
+    <div class="max-w-4xl mx-auto space-y-2">
+      <h1 class="text-3xl md:text-4xl font-bold">Solicitar Instalación y Servicio</h1>
+      <p class="text-[#95D2D2] text-sm md:text-base">Conoce nuestro proceso y agenda tu visita técnica en minutos</p>
+    </div>
+  </header>
+
+  <!-- BANNER 1: PROCESO DE INSTALACIÓN -->
+  <section class="py-12 px-4">
+    <div class="max-w-6xl mx-auto bg-[#093D65] rounded-3xl overflow-hidden shadow-2xl relative text-white grid grid-cols-1 lg:grid-cols-12">
+
+      <div class="lg:col-span-5 p-8 md:p-10 flex flex-col justify-between relative z-10 bg-cover bg-center" style="background-image: linear-gradient(to right, rgba(9, 61, 101, 0.95), rgba(9, 61, 101, 0.85)), url('https://images.unsplash.com/photo-1544717297-fa95b6ee9643?auto=format&fit=crop&w=800&q=80');">
+        <div>
+          <span class="text-xs uppercase tracking-widest font-bold text-[#95D2D2]">¿Cómo es nuestra instalación?</span>
+          <h2 class="text-2xl md:text-3xl font-bold mt-2 mb-4 leading-tight">Un proceso seguro, rápido y profesional</h2>
+          <p class="text-xs md:text-sm text-slate-200 leading-relaxed mb-6">Nos encargamos de todo, desde la evaluación técnica hasta la activación inmediata de tu servicio.</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 bg-white p-6 md:p-8 m-4 rounded-2xl text-slate-800 flex items-center">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full">
+
+          <div class="flex flex-col items-center text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="w-10 h-10 bg-[#1DA8C1]/15 rounded-full flex items-center justify-center text-[#1DA8C1] font-bold mb-3 text-xs">1</div>
+            <h4 class="font-bold text-xs text-[#093D65] mb-1">Evaluación del sitio</h4>
+            <p class="text-[10px] text-slate-500 leading-normal">Analizamos la mejor opción (fibra óptica o radiofrecuencia).</p>
+          </div>
+
+          <div class="flex flex-col items-center text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="w-10 h-10 bg-[#1DA8C1]/15 rounded-full flex items-center justify-center text-[#1DA8C1] font-bold mb-3 text-xs">2</div>
+            <h4 class="font-bold text-xs text-[#093D65] mb-1">Instalación de equipos</h4>
+            <p class="text-[10px] text-slate-500 leading-normal">Colocamos y configuramos los equipos necesarios.</p>
+          </div>
+
+          <div class="flex flex-col items-center text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="w-10 h-10 bg-[#1DA8C1]/15 rounded-full flex items-center justify-center text-[#1DA8C1] font-bold mb-3 text-xs">3</div>
+            <h4 class="font-bold text-xs text-[#093D65] mb-1">Configuración y pruebas</h4>
+            <p class="text-[10px] text-slate-500 leading-normal">Verificamos la calidad de la señal y la velocidad.</p>
+          </div>
+
+          <div class="flex flex-col items-center text-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="w-10 h-10 bg-[#1DA8C1]/15 rounded-full flex items-center justify-center text-[#1DA8C1] font-bold mb-3 text-xs">4</div>
+            <h4 class="font-bold text-xs text-[#093D65] mb-1">Activación del servicio</h4>
+            <p class="text-[10px] text-slate-500 leading-normal">Realizamos la activación total y soporte inicial.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER 2: AGENDA TU SERVICIO -->
+  <section class="py-12 px-4 mb-16">
+    <div class="max-w-6xl mx-auto bg-[#093D65] rounded-3xl overflow-hidden shadow-2xl text-white grid grid-cols-1 lg:grid-cols-12">
+
+      <div class="lg:col-span-4 p-8 flex flex-col justify-between bg-cover bg-center" style="background-image: linear-gradient(to right, rgba(9, 61, 101, 0.95), rgba(9, 61, 101, 0.85)), url('https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=800&q=80');">
+        <div>
+          <span class="text-xs uppercase tracking-widest font-bold text-[#95D2D2]">AGENDA TU SERVICIO</span>
+          <h2 class="text-2xl md:text-3xl font-bold mt-2 mb-4 leading-tight">Es muy fácil, en solo unos minutos</h2>
+          <p class="text-xs text-slate-200 leading-relaxed mb-6">Agenda una instalación, cambio de plan o visita técnica.</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 bg-white p-6 text-slate-800 m-4 rounded-2xl flex flex-col justify-center">
+
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4 text-[10px] font-bold text-[#093D65]">
+          <span class="flex items-center space-x-1 text-[#1DA8C1]"><span class="w-4 h-4 rounded-full bg-[#1DA8C1] text-white flex items-center justify-center text-[8px]">1</span> <span>Servicio</span></span>
+          <span class="flex items-center space-x-1 text-slate-400"><span class="w-4 h-4 rounded-full bg-slate-200 flex items-center justify-center text-[8px]">2</span> <span>Fecha y hora</span></span>
+          <span class="flex items-center space-x-1 text-slate-400"><span class="w-4 h-4 rounded-full bg-slate-200 flex items-center justify-center text-[8px]">3</span> <span>Datos</span></span>
+          <span class="flex items-center space-x-1 text-slate-400"><span class="w-4 h-4 rounded-full bg-slate-200 flex items-center justify-center text-[8px]">4</span> <span>Confirmación</span></span>
+        </div>
+
+        <form onsubmit="event.preventDefault(); alert('¡Gracias! Solicitud recibida.');" class="space-y-3">
+
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-600 mb-1">Tipo de servicio</label>
+            <select class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs text-slate-700">
+              <option>Selecciona un servicio</option>
+              <option>Nueva Instalación de Fibra Óptica</option>
+              <option>Cambio de Plan</option>
+            </select>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-600 mb-1">Fecha preferida</label>
+              <input type="date" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs text-slate-700">
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-600 mb-1">Hora</label>
+              <select class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs text-slate-700">
+                <option>Selecciona una hora</option>
+                <option>9:00 AM - 12:00 PM</option>
+                <option>3:00 PM - 6:00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="w-full bg-[#1DA8C1] hover:bg-[#62C6D5] text-white font-semibold py-2.5 rounded-lg text-xs transition mt-2 shadow">
+            Continuar →
+          </button>
+
+        </form>
+      </div>
+
+      <div class="lg:col-span-3 bg-[#093D65] p-6 border-l border-white/10 flex flex-col justify-center text-xs space-y-4">
+        <div>
+          <h4 class="font-bold text-sm text-white mb-1">¿Prefieres hablar con nosotros?</h4>
+          <p class="text-[11px] text-slate-300">Llámanos o escríbenos por WhatsApp.</p>
+        </div>
+
+        <div class="space-y-2 text-[11px] text-slate-200 pt-2">
+          <div>📞 744 123 4567</div>
+          <div>💬 744 123 4567</div>
+          <div>✉️ info@conectamax.com</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#093D65] text-white pt-12 pb-8 border-t border-[#1DA8C1]/35 text-center text-xs text-slate-400">
+    <p>© 2026 Enlaces Seguros y Eficientes de México S.A.S. de C.V.</p>
+  </footer>
+
+  <!-- VENTANA EMERGENTE DEL CHAT -->
+  <div id="chat-ventana" class="fixed bottom-24 right-6 z-50 w-80 md:w-96 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden hidden flex flex-col font-['Poppins',sans-serif]">
+
+    <!-- ENCABEZADO DEL CHAT -->
+    <div class="bg-[#093D65] text-white p-4 flex items-center justify-between">
+
+      <div class="flex items-center space-x-2">
+        <div class="relative">
+          <div class="w-10 h-10 bg-[#1DA8C1] rounded-full flex items-center justify-center text-white">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a4 4 0 0 1 4 4v3h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1v-3a4 4 0 0 1 4-4h1V5.73C10.4 5.39 10 4.74 10 4a2 2 0 0 1 2-2M9 11a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1m6 0a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1m-3 4a3 3 0 0 0-3 3h6a3 3 0 0 0-3-3Z"/>
+            </svg>
+          </div>
+
+          <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-[#093D65] rounded-full"></span>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-sm">En línea</h3>
+          <p class="text-[10px] text-[#95D2D2]">Disponible ahora</p>
+        </div>
+      </div>
+
+      <button onclick="toggleChat()" class="text-white hover:text-slate-300 text-xl font-bold p-1">×</button>
+    </div>
+
+    <!-- CUERPO DEL CHAT -->
+    <div class="p-4 bg-slate-50 flex-grow h-72 overflow-y-auto space-y-4">
+
+      <div class="bg-[#1DA8C1] text-white p-3.5 rounded-2xl rounded-tl-none text-xs leading-relaxed shadow-sm">
+        ¡Hola! 👋 ¡Te damos la bienvenida a <strong>Enlanet</strong>! Para brindarte la atención que te mereces, elige la opción que deseas:
+      </div>
+
+      <div class="flex flex-wrap gap-2 pt-2">
+        <button onclick="alert('Opción seleccionada: Contratar servicio de fibra óptica')" class="bg-white text-[#093D65] border border-[#1DA8C1] hover:bg-[#1DA8C1] hover:text-white text-xs py-1.5 px-3 rounded-full transition shadow-sm font-medium">Contratar servicio de fibra óptica</button>
+
+        <button onclick="alert('Opción seleccionada: Soporte técnico')" class="bg-white text-[#093D65] border border-[#1DA8C1] hover:bg-[#1DA8C1] hover:text-white text-xs py-1.5 px-3 rounded-full transition shadow-sm font-medium">Soporte técnico</button>
+
+        <button onclick="alert('Opción seleccionada: Pagos')" class="bg-white text-[#093D65] border border-[#1DA8C1] hover:bg-[#1DA8C1] hover:text-white text-xs py-1.5 px-3 rounded-full transition shadow-sm font-medium">Pagos</button>
+
+        <button onclick="alert('Opción seleccionada: Paquetes disponibles')" class="bg-white text-[#093D65] border border-[#1DA8C1] hover:bg-[#1DA8C1] hover:text-white text-xs py-1.5 px-3 rounded-full transition shadow-sm font-medium">Paquetes disponibles</button>
+
+        <button onclick="alert('Opción seleccionada: Zona de cobertura')" class="bg-white text-[#093D65] border border-[#1DA8C1] hover:bg-[#1DA8C1] hover:text-white text-xs py-1.5 px-3 rounded-full transition shadow-sm font-medium">Zona de cobertura</button>
+      </div>
+    </div>
+
+    <!-- PIE DEL CHAT -->
+    <div class="p-3 bg-white border-t border-slate-200">
+      <div class="flex items-center bg-slate-100 rounded-xl px-3 py-2 border border-slate-200">
+        <input type="text" placeholder="Escribe un mensaje..." class="bg-transparent text-xs w-full focus:outline-none text-slate-700" disabled>
+        <span class="text-slate-400 text-sm ml-2">📎</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTÓN FLOTANTE DEL CHAT -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+
+    <!-- CUADRO DE TEXTO -->
+    <div class="relative mb-2 pr-6 cursor-pointer group" onclick="toggleChat()">
+
+      <div class="bg-white text-slate-800 text-xs py-2.5 px-4 rounded-2xl shadow-md border border-slate-200 flex items-center group-hover:border-[#1DA8C1] transition">
+        <span>Hola, ¿en qué te ayudo?</span>
+      </div>
+
+      <button class="absolute -top-1 right-1 text-slate-400 hover:text-slate-700 font-bold text-sm" onclick="event.stopPropagation(); this.closest('.fixed').style.display='none'">×</button>
+    </div>
+
+    <!-- BOTÓN CIRCULAR DEL BOT -->
+    <div class="relative">
+      <button onclick="toggleChat()" style="border: 2px solid #093D65 !important;" class="chat-float-button w-16 h-16 bg-[#FEF8E9] rounded-full shadow-xl flex items-center justify-center cursor-pointer">
+
+        <svg class="w-8 h-8 text-[#093D65]" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a4 4 0 0 1 4 4v3h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1v-3a4 4 0 0 1 4-4h1V5.73C10.4 5.39 10 4.74 10 4a2 2 0 0 1 2-2M9 11a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1m6 0a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1m-3 4a3 3 0 0 0-3 3h6a3 3 0 0 0-3-3Z"/>
+        </svg>
+      </button>
+
+      <span class="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-sm pointer-events-none">1</span>
+    </div>
+  </div>
+
+  <!-- SCRIPT DEL CHAT -->
+  <script>
+    function toggleChat() {
+      const ventana = document.getElementById('chat-ventana');
+
+      if (ventana) {
+        ventana.classList.toggle('hidden');
+      }
+    }
+  </script>
+
+</body>
+</html>
